@@ -1,0 +1,39 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass -w src/resources/scss -o src/public/css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "beautiful": "prettier --single-quote --trailing-comma all --write 'src/**/*.{js,json,scss}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "handlebars": "^4.7.6",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.28",
+    "mongoose-delete": "^0.5.2",
+    "mongoose-slug-generator": "^1.0.4",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --write"
+  }
+}

@@ -1,0 +1,31 @@
+<div class="mt-4">
+  <h3>Cap nhat Khoa hoc</h3>
+
+  <div class="container">
+    <div class="row">
+      <form method="POST" action="/courses/update/{{course._id}}?_method=PUT">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" value="{{course.name}}">
+        </div>
+
+         <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" name="description" value="{{course.description}}">
+        </div>
+
+         <div class="form-group">
+          <label for="videoId">Video Id</label>
+          <input type="text" class="form-control" id="videoId" name="videoId" value="{{course.videoId}}">
+        </div>
+
+         <div class="form-group">
+          <label for="level">Level</label>
+          <input type="text" class="form-control" id="level" name="level" value="{{course.level}}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Luu lai</button>
+      </form>
+    </div>
+  </div>
+</div>
