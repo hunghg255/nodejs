@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 async function connect() {
   try {
     await mongoose.connect('mongodb://localhost:27017/f8_education_dev', {
-      useNewUrlParser: true,
+useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
     });
 
-    console.log('Connect successfully !')
+    console.log('Connect successfully !');
   } catch (error) {
-    console.log('Connect failly !')
+    console.log('Connect failly !');
   }
 }
 
-module.exports = { connect }
+module.exports = { connect };

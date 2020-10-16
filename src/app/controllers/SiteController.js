@@ -5,7 +5,7 @@ const Course = require('../models/Course');
 class SiteController {
   // TODO [GET] /
   index(req, res, next) {
-    Course.find({}, function(err, courses) {
+    Course.find({}, function (err, courses) {
       if (!err) {
         // res.json(courses);
         courses = JSON.parse(JSON.stringify(courses));
@@ -15,7 +15,6 @@ class SiteController {
       }
       next(err);
     });
-
   }
 
   // TODO [GET] /serach
@@ -25,7 +24,6 @@ class SiteController {
 
   // TODO [POST] /search
   register(req, res) {
-
     console.log(req.body);
     return res.send('search');
   }

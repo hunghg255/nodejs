@@ -6,14 +6,16 @@ class CourseController {
   showCourse(req, res, next) {
     Course.findOne({ slug: req.params.slug })
       .then((course) => {
-        res.render('courses/course', { course: JSON.parse(JSON.stringify(course)) });
+        res.render('courses/course', {
+          course: JSON.parse(JSON.stringify(course)),
+        });
       })
       .catch(next);
   }
 
-   // TODO [GET] /courses/create
+  // TODO [GET] /courses/create
   createCourse(req, res, next) {
-    console.log(req.body)
+    console.log(req.body);
     res.render('courses/create');
   }
 
@@ -23,16 +25,21 @@ class CourseController {
     formData.image = `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`;
 
     const course = new Course(formData);
-    course.save()
+    course
+      .save()
       .then(() => res.redirect('/'))
-      .catch(next)
+      .catch(next);
   }
 
   // TODO [GET] /courses/edit/:id
   editCourse(req, res, next) {
     const id = req.params.id;
     Course.findById(id)
-      .then(course => res.render('courses/edit', { course: JSON.parse(JSON.stringify(course)) }))
+      .then((course) =>
+        res.render('courses/edit', {
+          course: JSON.parse(JSON.stringify(course)),
+        }),
+      )
       .catch(next);
   }
 

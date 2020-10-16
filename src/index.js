@@ -18,12 +18,13 @@ app.use(methodOverride('_method'));
 
 //* middlerware
 // formData
-app.use(express.urlencoded({
-  extended: true,
-}));
+app.use(
+  express.urlencoded({
+    extended: true,
+  }),
+);
 // axios,....
 app.use(express.json());
-
 
 //* static file
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,12 +34,15 @@ app.use(morgan('combined'));
 
 //* Template engine
 //* __dirname = ../src
-app.engine('hbs', handlebars({
-  extname: '.hbs',
-  helpers: {
-    sum: (a, b) => a + b,
-  }
-}));
+app.engine(
+  'hbs',
+  handlebars({
+    extname: '.hbs',
+    helpers: {
+      sum: (a, b) => a + b,
+    },
+  }),
+);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
